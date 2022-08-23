@@ -1,0 +1,150 @@
+void setup() {
+  // put your setup code here, to run once:
+pinMode(4,INPUT);
+pinMode(5,INPUT);
+pinMode(6,INPUT);
+pinMode(7,INPUT);
+pinMode(8,OUTPUT);
+pinMode(9,OUTPUT);
+pinMode(10,OUTPUT);
+pinMode(11,OUTPUT);
+
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+int a,b,c,d,t,d0,d1,d2,d3,x[10];
+  a=0;
+  b=0;
+  c=0;
+  d=0;
+  if(a==0&&b==0&&c==0&&d==0)
+  {
+  digitalWrite(8,LOW);
+  digitalWrite(9,LOW);
+  digitalWrite(10,LOW);
+  digitalWrite(11,LOW);
+  }
+  for (t=0;t<1000;t++)
+  {
+    if(digitalRead(4)==HIGH)
+      a++;
+    if(digitalRead(5)==HIGH)
+      b++;
+    if(digitalRead(6)==HIGH)
+      c++;
+    if(digitalRead(7)==HIGH)
+      d++;
+    delay(10);
+  }
+x[0]=a;
+x[1]=b;
+x[2]=c;
+x[3]=d;
+  //d0
+  if(x[0]==0)
+    {
+      d0=0;
+    }
+  if(x[0]<4)
+    {
+      d0=9000;
+    }
+  if(x[0]>3&&x[0]<9)
+    {
+      d0=15000;
+    }
+  if(x[0]>8&&x[0]<15)
+    {
+      d0=25000;
+    }
+  if(x[0]>14)
+    {
+      d0=60000;
+    }
+  //d1
+  if(x[1]==0)
+    {
+      d1=0;
+    }
+  if(x[1]<4)
+    {
+      d1=9000;
+    }
+  if(x[1]>3&&x[1]<9)
+    {
+      d1=15000;
+    }
+  if(x[1]>8&&x[1]<15)
+    {
+      d1=25000;
+    }
+  if(x[1]>14)
+    {
+      d1=60000;
+    }
+  //d2
+  if(x[2]==0)
+    {
+      d2=0;
+    }
+  if(x[2]<4)
+    {
+      d2=9000;
+    }
+  if(x[2]>3&&x[2]<9)
+    {
+      d2=15000;
+    }
+  if(x[2]>8&&x[2]<15)
+    {
+      d2=25000;
+    }
+  if(x[2]>14)
+    {
+      d2=60000;
+    }
+  //d3
+  if(x[3]==0)
+    {
+      d3=0;
+    }
+  if(x[3]<4)
+    {
+      d3=9000;
+    }
+  if(x[3]>3&&x[3]<9)
+    {
+      d3=15000;
+    }
+  if(x[3]>8&&x[3]<15)
+    {
+      d3=25000;
+    }
+  if(x[3]>14)
+    {
+      d3=60000;
+    }
+    digitalWrite(8,HIGH);
+    digitalWrite(9,LOW);
+    digitalWrite(10,LOW);
+    digitalWrite(11,LOW);
+    delay(d0);
+    digitalWrite(8,LOW);
+    digitalWrite(9,HIGH);
+    digitalWrite(10,LOW);
+    digitalWrite(11,LOW);
+    delay(d1);
+    digitalWrite(8,LOW);
+    digitalWrite(9,LOW);
+    digitalWrite(10,HIGH);
+    digitalWrite(11,LOW);
+    delay(d2);
+    digitalWrite(8,LOW);
+    digitalWrite(9,LOW);
+    digitalWrite(10,LOW);
+    digitalWrite(11,HIGH);
+    delay(d3);
+}
+
+}
